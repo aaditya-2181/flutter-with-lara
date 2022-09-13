@@ -19,5 +19,14 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-
+// get the database data
 Route::get('users', [StudentController::class, 'index']);
+
+// save database
+Route::post('saved', [StudentController::class, 'saveData']);
+
+//updata database
+Route::put('update', [StudentController::class, 'updateData']);
+
+//delete user
+Route::delete('delete', [StudentController::class,'deleteData']);
